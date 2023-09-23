@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed&family=Bellefair&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -5,4 +7,25 @@
 html,
 body {
   height: 100%;
+}
+
+body {
+  @apply font-barlow flex flex-col bg-[url('/assets/home/background-home-mobile.jpg')] bg-no-repeat bg-cover;
+}
+
+h1 {
+  @apply font-bellefair text-white text-[80px] leading-[100px];
+}
+
+p {
+  @apply text-blue-light font-barlow text-[15px] leading-[25px];
+}
+
+.nav_text {
+  @apply text-blue-light font-barlow-condensed text-[16px] tracking-[2.7px] leading-[19px];
+}
+
+.btn_circle {
+  @apply w-[150px] h-[150px] bg-white rounded-full text-blue-dark uppercase text-[20px] leading-[23px] tracking-[1.25px] transition-shadow duration-300
+          hover:shadow-[0_0_0_48px_rgba(255,255,255,0.1)];
 }
