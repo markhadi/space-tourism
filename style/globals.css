@@ -51,3 +51,36 @@ p {
 .menu_active {
   @apply after:opacity-100 after:w-full;
 }
+
+.icon_transition {
+  @apply absolute transition-all duration-300 scale-0;
+}
+
+.icon_visible {
+  @apply relative scale-100;
+}
+
+.menu_mobile {
+  @apply absolute top-0 right-0 w-[254px] pt-28 pl-8 h-screen bg-[rgba(255,255,255,0.04)] backdrop-blur-[40px] transition-all duration-300;
+}
+
+.menu_hover_mobile {
+  @apply after:absolute after:border-[3px] after:opacity-0 after:h-0 after:right-0  after:transition-all after:duration-300
+          after:hover:border-[3px] after:hover:opacity-100 after:hover:h-full;
+}
+
+.menu_active_mobile {
+  @apply after:opacity-100 after:h-full;
+}
+
+.hide_menu {
+  @apply w-0 pl-0;
+}
+
+.menu_item {
+  @apply text-white font-barlow-condensed text-[16px] leading-[20px] tracking-[2.7px] uppercase;
+}
+
+.menu_desktop {
+  @apply sm:flex sm:px-12 sm:py-[38px] sm:bg-[rgba(255,255,255,0.04)] sm:backdrop-blur-[40px] lg:px-0 lg:pl-[120px] lg:pr-[168px];
+}
