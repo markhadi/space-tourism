@@ -4,9 +4,9 @@ export default function Home() {
   return (
     <>
       <Nav />
-      <main className="z-[1] pb-12 sm:pb-[90px]">
-        <div className="flex flex-col gap-[81px] justify-start items-center px-6 sm:gap-[156px]">
-          <div className="flex flex-col gap-4 text-center max-w-[445px] sm:gap-6">
+      <main className="z-[1] pb-12 sm:pb-[90px] lg:pb-[132px]">
+        <div className="flex flex-col gap-[81px] items-center px-6 sm:gap-[156px] lg:flex-row lg:max-w-[1110px] lg:px-16 lg:justify-between lg:items-end lg:mx-auto xl:px-0">
+          <div className="flex flex-col gap-4 text-center max-w-[445px] sm:gap-6 lg:text-left">
             <span className="nav_text">SO, YOU WANT TO TRAVEL TO</span>
             <h1>SPACE</h1>
             <p>

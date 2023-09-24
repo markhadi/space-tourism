@@ -6,34 +6,41 @@
 
 html,
 body {
-  height: 100%;
+  min-height: 100%;
+  height: max-content;
 }
 
 body {
-  @apply font-barlow flex flex-col bg-[url('/assets/home/background-home-mobile.jpg')] bg-no-repeat bg-cover
-          sm:bg-[url('/assets/home/background-home-tablet.jpg')];
+  @apply font-barlow flex flex-col bg-[url('/assets/home/background-home-mobile.jpg')] bg-no-repeat bg-cover 
+          sm:bg-[url('/assets/home/background-home-tablet.jpg')]
+          lg:bg-[url('/assets/home/background-home-desktop.jpg')];
 }
 
 h1 {
   @apply font-bellefair text-white text-[80px] leading-[100px]
-          sm:text-[150px] sm:leading-none;
+          sm:text-[150px] sm:leading-none
+          lg:leading-[172px];
 }
 
 p {
   @apply text-blue-light font-barlow text-[15px] leading-[25px]
-            sm:text-[16px] sm:leading-[28px];
+            sm:text-[16px] sm:leading-[28px]
+            lg:text-[18px] lg:leading-[32px];
 }
 
 .nav_text {
   @apply text-blue-light font-barlow-condensed text-[16px] tracking-[2.7px] leading-[19px]
-            sm:text-[20px] sm:tracking-[3.38px] sm:leading-[24px];
+            sm:text-[20px] sm:tracking-[3.38px] sm:leading-[24px]
+            lg:text-[28px] lg:tracking-[4.72px] lg:leading-[34px];
 }
 
 .btn_circle {
   @apply w-[150px] h-[150px] bg-white rounded-full font-bellefair text-blue-dark uppercase text-[20px] leading-[23px] tracking-[1.25px] transition-shadow duration-300
           hover:shadow-[0_0_0_48px_rgba(255,255,255,0.1)]
           sm:w-[242px] sm:h-[242px] sm:text-[32px] sm:leading-[37px] sm:tracking-[2px]
-          sm:hover:shadow-[0_0_0_78px_rgba(255,255,255,0.1)];
+          sm:hover:shadow-[0_0_0_78px_rgba(255,255,255,0.1)]
+          lg:w-[274px] lg:h-[274px]
+          lg:hover:shadow-[0_0_0_88px_rgba(255,255,255,0.1)];
 }
 
 .menu_hover {
