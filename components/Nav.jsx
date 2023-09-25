@@ -51,7 +51,7 @@ const Nav = () => {
 
       {/* menu desktop */}
       <div className="hidden menu_desktop">
-        <div className="flex gap-7 menu_item">
+        <div className="flex gap-7 menu_item lg:gap-[52px]">
           {menuArray.map((item) => {
             const itemPath =
               item.name.toLowerCase() === "home"
