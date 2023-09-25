@@ -45,7 +45,7 @@ p {
 
 .menu_hover {
   @apply after:absolute after:border-[3px] after:opacity-0 after:w-0 after:left-0 after:bottom-[-38px] after:transition-all after:duration-300
-          after:hover:border-[3px] after:hover:opacity-100 after:hover:w-full;
+          after:hover:border-[3px] after:hover:opacity-50 after:hover:w-full;
 }
 
 .menu_active {
@@ -66,7 +66,7 @@ p {
 
 .menu_hover_mobile {
   @apply after:absolute after:border-[3px] after:opacity-0 after:h-0 after:right-0  after:transition-all after:duration-300
-          after:hover:border-[3px] after:hover:opacity-100 after:hover:h-full;
+          after:hover:border-[3px] after:hover:opacity-50 after:hover:h-full;
 }
 
 .menu_active_mobile {
