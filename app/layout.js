@@ -1,5 +1,4 @@
-import Nav from "@/components/Nav";
-import "../style/globals.css";
+import "@/style/globals.css";
 
 export const metadata = {
   title: "Space Tourism",
@@ -9,10 +8,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <Nav />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

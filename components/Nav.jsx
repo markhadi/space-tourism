@@ -18,7 +18,7 @@ const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="flex justify-between items-center px-6 pt-6 mb-12 sm:pt-0 sm:px-0 sm:pl-10 sm:mb-[106px] lg:pl-[55px] lg:pt-10 lg:mb-[250px]">
+    <nav className="flex justify-between items-center px-6 pt-6 sm:pt-0 sm:px-0 sm:pl-10 lg:pl-[55px] lg:pt-10 ">
       <Link href="/">
         <Image
           src="/assets/shared/logo.svg"
