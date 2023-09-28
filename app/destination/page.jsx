@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import { useState, useEffect } from "react";
 
-import { stagger, useAnimate, useInView } from "framer-motion";
+import { stagger, useAnimate } from "framer-motion";
 
 import { Skeleton } from "@/components/ui/skeleton";
 

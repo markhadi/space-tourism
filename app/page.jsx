@@ -1,4 +1,5 @@
 import Nav from "@/components/Nav";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -22,7 +23,9 @@ export default function Home() {
             </p>
           </div>
 
-          <button className="btn_circle">explore</button>
+          <Link href={"/destination"} className="btn_circle">
+            explore
+          </Link>
         </div>
       </main>
     </section>
