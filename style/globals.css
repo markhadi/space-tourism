@@ -95,3 +95,14 @@ p {
 .btn_sm_circle_active {
   @apply opacity-100;
 }
+
+.btn_md_circle {
+  @apply w-[40px] h-[40px] text-white font-bellefair text-[16px] leading-[18px] tracking-[1px] rounded-full bg-white bg-opacity-0 border border-white border-opacity-20 transition-all duration-300
+          hover:bg-opacity-100 hover:text-blue-dark
+          sm:w-[60px] sm:h-[60px] sm:text-[24px] sm:leading-[28px] sm:tracking-[1.5px]
+          lg:w-[80px] lg:h-[80px] lg:text-[32px] lg:leading-[37px] lg:tracking-[2px];
+}
+
+.btn_md_circle_active {
+  @apply bg-opacity-100 text-blue-dark;
+}

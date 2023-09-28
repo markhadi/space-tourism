@@ -5,7 +5,7 @@ import data from "@/static/data.json";
 import { useState, useEffect } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
-import { stagger, useAnimate } from "framer-motion";
+import { useAnimate } from "framer-motion";
 
 const crew = data.crew;
 
@@ -103,7 +103,7 @@ const CrewPage = () => {
                   {text.role}
                 </h4>
               ) : (
-                <Skeleton className="w-full h-5 mb-2  sm:h-7 lg:h-9 lg:mb-4 " />
+                <Skeleton className="w-60 h-5 mb-2  sm:h-7 sm:w-96 lg:h-9 lg:mb-4 " />
               )}
 
               {text.name ? (
@@ -114,7 +114,7 @@ const CrewPage = () => {
                   {text.name}
                 </h3>
               ) : (
-                <Skeleton className="w-full h-7 mb-4 sm:h-12 lg:h-16 lg:mb-7" />
+                <Skeleton className="w-60 h-7 mb-4 sm:h-12 sm:w-96 lg:h-16 lg:mb-7" />
               )}
 
               {text.bio ? (
@@ -125,7 +125,7 @@ const CrewPage = () => {
                   {text.bio}
                 </p>
               ) : (
-                <Skeleton className="w-full h-20 lg:h-32" />
+                <Skeleton className="w-60 h-20 sm:w-96 lg:h-32" />
               )}
             </div>
           </div>

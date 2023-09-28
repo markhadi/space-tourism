@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import { useState, useEffect } from "react";
 
-import { stagger, useAnimate } from "framer-motion";
+import { useAnimate } from "framer-motion";
 
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -41,7 +41,6 @@ const DestinationPage = () => {
       {
         ease: [0.13, 0.55, 0.55, 1],
         duration: 0.5,
-        delay: stagger(0.5, { startDelay: 0.5 }),
       }
     );
 
