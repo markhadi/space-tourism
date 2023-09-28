@@ -61,12 +61,14 @@ const Nav = () => {
             const isActive = pathname === itemPath;
 
             return (
-              <div key={item.id} className="relative flex gap-3">
-                <span className="hidden font-bold lg:block">{item.id}</span>
+              <div key={item.id}>
                 <Link
                   href={itemPath}
-                  className={`menu_hover ${isActive ? "menu_active" : ""}`}
+                  className={`menu_hover relative flex gap-3 ${
+                    isActive ? "menu_active" : ""
+                  }`}
                 >
+                  <span className="hidden font-bold lg:block">{item.id}</span>
                   {item.name}
                 </Link>
               </div>
@@ -88,14 +90,14 @@ const Nav = () => {
                 const isActive = pathname === itemPath;
 
                 return (
-                  <div key={item.id} className="relative flex gap-3">
-                    <span className="font-bold">{item.id}</span>
+                  <div key={item.id}>
                     <Link
                       href={itemPath}
-                      className={`menu_hover_mobile ${
+                      className={`menu_hover_mobile relative flex gap-3 ${
                         isActive ? "menu_active_mobile" : ""
                       }`}
                     >
+                      <span className="font-bold">{item.id}</span>
                       {item.name}
                     </Link>
                   </div>
