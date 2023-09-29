@@ -2,48 +2,24 @@
 
 import Nav from "@/components/Nav";
 import data from "@/static/data.json";
-import { useState, useEffect } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import Image from "next/image";
-import { useAnimate } from "framer-motion";
+
+import useAnimation from "@/hooks/useAnimation";
+import useLocalStorage from "@/hooks/useLocalStorage";
 
 const crew = data.crew;
 
-console.log(crew);
-
 const CrewPage = () => {
-  const [text, setText] = useState([]);
-  const [scope, animate] = useAnimate();
+  const [text, updateLocalStorage] = useLocalStorage("crew", crew[0]);
+  const [scope, animateElement] = useAnimation();
 
-  useEffect(() => {
-    const storedText = localStorage.getItem("crew");
-
-    if (!storedText) {
-      localStorage.setItem("crew", JSON.stringify(crew[0]));
-      setText(crew[0]);
-    } else {
-      setText(JSON.parse(storedText));
-    }
-  }, []);
-
-  const updateLocalStorage = (index) => {
+  const handleUpdateLocalStorage = (index) => {
     const newData = crew[index];
-    localStorage.setItem("crew", JSON.stringify(newData));
 
-    animate(
-      "#newItem",
-      {
-        opacity: [0, 1],
-        scale: [0.3, 1],
-        filter: ["blur(20px)", "blur(0px)"],
-      },
-      {
-        ease: [0.13, 0.55, 0.55, 1],
-        duration: 0.5,
-      }
-    );
+    animateElement("#newItem");
 
-    setText(newData);
+    updateLocalStorage(newData);
   };
 
   return (
@@ -57,10 +33,16 @@ const CrewPage = () => {
       <main className="mt-6 pb-[104px] sm:mt-10 sm:pb-0 lg:mt-[76px]">
         <div
           ref={scope}
-          className="flex flex-col items-center gap-8 px-6 sm:gap-[60px] lg:max-w-[1110px] lg:gap-0 lg:mx-auto xl:px-0"
+          className="flex flex-col items-center gap-8 px-6 
+                      sm:gap-[60px] 
+                      lg:max-w-[1110px] lg:gap-0 lg:mx-auto 
+                      xl:px-0"
         >
-          <h5 className="flex gap-5 text-white uppercase text-[16px] leading-[20px] tracking-[2.7px] sm:self-start sm:gap-7 sm:text-[20px] sm:leading-[24px] sm:tracking-[3.38px] lg:text-[28px] lg:leading-[34px] lg:tracking-[4.72px]">
-            <span className="font-bold text-[rgba(255,255,255,0.25)] sm:pl-10 lg:pl-0">
+          <h5
+            className="flex gap-5 
+                        sm:self-start sm:gap-7"
+          >
+            <span className="font-bold text-white text-opacity-25 sm:pl-10 lg:pl-0">
               02
             </span>
             Meet your crew
@@ -87,7 +69,7 @@ const CrewPage = () => {
                 {crew.map((item, index) => (
                   <button
                     key={item.name}
-                    onClick={() => updateLocalStorage(index)}
+                    onClick={() => handleUpdateLocalStorage(index)}
                     className={`btn_sm_circle  ${
                       item.name === text.name ? "btn_sm_circle_active" : ""
                     }`}
@@ -96,21 +78,15 @@ const CrewPage = () => {
               </div>
 
               {text.role ? (
-                <h4
-                  id="newItem"
-                  className="text-white opacity-50 font-bellefair text-[16px] leading-[18px] uppercase mb-2  sm:text-[24px] sm:leading-[28px] lg:text-[32px] lg:leading-[37px] lg:mb-4"
-                >
+                <h4 id="newItem" className="mb-2 lg:mb-4">
                   {text.role}
                 </h4>
               ) : (
-                <Skeleton className="w-60 h-5 mb-2  sm:h-7 sm:w-96 lg:h-9 lg:mb-4 " />
+                <Skeleton className="w-60 h-5 mb-2 sm:h-7 sm:w-96 lg:h-9 lg:mb-4 " />
               )}
 
               {text.name ? (
-                <h3
-                  id="newItem"
-                  className="text-white font-bellefair text-[24px] leading-[28px] uppercase mb-4 sm:text-[40px] sm:leading-[46px] lg:text-[56px] lg:leading-[64px] lg:mb-7"
-                >
+                <h3 id="newItem" className="mb-4 lg:mb-7">
                   {text.name}
                 </h3>
               ) : (
@@ -118,10 +94,7 @@ const CrewPage = () => {
               )}
 
               {text.bio ? (
-                <p
-                  id="newItem"
-                  className="text-blue-light text-center font-barlow text-[15px] leading-[25px] sm:text-[16px] sm:leading-[28px] lg:text-[18px] lg:leading-[32px] lg:text-left lg:max-w-[444px]"
-                >
+                <p id="newItem" className="lg:text-left lg:max-w-[444px]">
                   {text.bio}
                 </p>
               ) : (

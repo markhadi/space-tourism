@@ -14,16 +14,42 @@ h1 {
           lg:leading-[172px];
 }
 
+h2 {
+  @apply font-bellefair text-white text-[56px] leading-[64px] uppercase
+          sm:text-[80px] sm:leading-[92px]
+          lg:text-[100px] lg:leading-[115px];
+}
+
+h3 {
+  @apply font-bellefair text-white text-[24px] leading-[28px] uppercase
+          sm:text-[40px] sm:leading-[46px]
+          lg:text-[56px] lg:leading-[64px];
+}
+
+h4 {
+  @apply font-bellefair text-white text-opacity-50 text-[16px] leading-[18px] uppercase
+          sm:text-[24px] sm:leading-[28px]
+          lg:text-[32px] lg:leading-[38px];
+}
+
+h5 {
+  @apply font-barlow-condensed text-white text-[16px] leading-[20px] tracking-[2.7px] uppercase
+          sm:text-[20px] sm:leading-[24px] sm:tracking-[3.38px]
+          lg:text-[28px] lg:leading-[34px] lg:tracking-[4.72px];
+}
+
 p {
   @apply text-blue-light font-barlow text-[15px] leading-[25px]
             sm:text-[16px] sm:leading-[28px]
             lg:text-[18px] lg:leading-[32px];
 }
 
-.nav_text {
-  @apply text-blue-light font-barlow-condensed text-[16px] tracking-[2.7px] leading-[19px]
-            sm:text-[20px] sm:tracking-[3.38px] sm:leading-[24px]
-            lg:text-[28px] lg:tracking-[4.72px] lg:leading-[34px];
+.subheading-1 {
+  @apply font-bellefair text-white text-[28px] leading-[32px] uppercase;
+}
+
+.subheading-2 {
+  @apply font-barlow-condensed text-blue-light text-[14px] leading-[17px] tracking-[2.36px] uppercase;
 }
 
 .btn_circle {
@@ -57,7 +83,7 @@ p {
 }
 
 .menu_hover_mobile {
-  @apply after:absolute after:border-[3px] after:opacity-0 after:h-0 after:right-0  after:transition-all after:duration-300
+  @apply after:absolute after:border-[3px] after:opacity-0 after:h-0 after:right-0 after:transition-all after:duration-300
           after:hover:border-[3px] after:hover:opacity-50 after:hover:h-full;
 }
 

@@ -4,44 +4,24 @@ import Nav from "@/components/Nav";
 import { Skeleton } from "@/components/ui/skeleton";
 import data from "@/static/data.json";
 
-import { useEffect, useState } from "react";
-import { useAnimate } from "framer-motion";
+import useAnimation from "@/hooks/useAnimation";
+import useLocalStorage from "@/hooks/useLocalStorage";
 
 const technology = data.technology;
 
 const TechnologyPage = () => {
-  const [text, setText] = useState([]);
-  const [scope, animate] = useAnimate();
+  const [text, updateLocalStorage] = useLocalStorage(
+    "technology",
+    technology[0]
+  );
+  const [scope, animateElement] = useAnimation();
 
-  useEffect(() => {
-    const storedText = localStorage.getItem("technology");
-
-    if (!storedText) {
-      localStorage.setItem("technology", JSON.stringify(technology[0]));
-      setText(technology[0]);
-    } else {
-      setText(JSON.parse(storedText));
-    }
-  }, []);
-
-  const updateLocalStorage = (index) => {
+  const handleUpdateLocalStorage = (index) => {
     const newData = technology[index];
-    localStorage.setItem("technology", JSON.stringify(newData));
 
-    animate(
-      "#newItem",
-      {
-        opacity: [0, 1],
-        scale: [0.3, 1],
-        filter: ["blur(20px)", "blur(0px)"],
-      },
-      {
-        ease: [0.13, 0.55, 0.55, 1],
-        duration: 0.5,
-      }
-    );
+    animateElement("#newItem");
 
-    setText(newData);
+    updateLocalStorage(newData);
   };
 
   return (
@@ -60,11 +40,14 @@ const TechnologyPage = () => {
                       lg:max-w-[1275px] lg:w-full lg:gap-[64px] lg:mr-0 lg:ml-auto 
                       xl:px-0"
         >
-          <h5 className="flex gap-5 text-white uppercase text-[16px] leading-[20px] tracking-[2.7px] sm:self-start sm:gap-7 sm:text-[20px] sm:leading-[24px] sm:tracking-[3.38px] lg:text-[28px] lg:leading-[34px] lg:tracking-[4.72px]">
-            <span className="font-bold text-[rgba(255,255,255,0.25)] sm:pl-10 lg:pl-0">
+          <h5
+            className="flex gap-5 
+                        sm:self-start sm:gap-7"
+          >
+            <span className="font-bold text-white text-opacity-25 sm:pl-10 lg:pl-0">
               03
             </span>
-            SPACE LAUNCH 101
+            Space Launch 101
           </h5>
 
           <div
@@ -100,7 +83,7 @@ const TechnologyPage = () => {
               {technology.map((item, index) => (
                 <button
                   key={item.name}
-                  onClick={() => updateLocalStorage(index)}
+                  onClick={() => handleUpdateLocalStorage(index)}
                   className={`btn_md_circle  ${
                     item.name === text.name ? "btn_md_circle_active" : ""
                   }`}
