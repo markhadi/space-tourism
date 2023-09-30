@@ -1,7 +1,9 @@
 "use client";
 
 import Nav from "@/components/Nav";
+import SectionTitle from "@/components/SectionTitle";
 import { Skeleton } from "@/components/ui/skeleton";
+
 import data from "@/static/data.json";
 
 import useAnimation from "@/hooks/useAnimation";
@@ -19,9 +21,8 @@ const TechnologyPage = () => {
   const handleUpdateLocalStorage = (index) => {
     const newData = technology[index];
 
-    animateElement("#newItem");
-
     updateLocalStorage(newData);
+    animateElement("#newItem");
   };
 
   return (
@@ -32,7 +33,7 @@ const TechnologyPage = () => {
     >
       <Nav />
 
-      <main className="mt-6 pb-14 sm:mt-10 sm:pb-[100px]">
+      <main className="mt-6 pb-14 sm:mt-10 sm:pb-[100px] lg:mt-[76px]">
         <div
           ref={scope}
           className="flex flex-col items-center gap-8 
@@ -40,15 +41,7 @@ const TechnologyPage = () => {
                       lg:max-w-[1275px] lg:w-full lg:gap-[64px] lg:mr-0 lg:ml-auto 
                       xl:px-0"
         >
-          <h5
-            className="flex gap-5 
-                        sm:self-start sm:gap-7"
-          >
-            <span className="font-bold text-white text-opacity-25 sm:pl-10 lg:pl-0">
-              03
-            </span>
-            Space Launch 101
-          </h5>
+          <SectionTitle number="03" title="Space Launch 101" />
 
           <div
             className="flex flex-col items-center w-full 

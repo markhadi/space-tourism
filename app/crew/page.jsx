@@ -1,8 +1,11 @@
 "use client";
 
 import Nav from "@/components/Nav";
-import data from "@/static/data.json";
+import SectionTitle from "@/components/SectionTitle";
 import { Skeleton } from "@/components/ui/skeleton";
+
+import data from "@/static/data.json";
+
 import Image from "next/image";
 
 import useAnimation from "@/hooks/useAnimation";
@@ -17,9 +20,8 @@ const CrewPage = () => {
   const handleUpdateLocalStorage = (index) => {
     const newData = crew[index];
 
-    animateElement("#newItem");
-
     updateLocalStorage(newData);
+    animateElement("#newItem");
   };
 
   return (
@@ -38,15 +40,7 @@ const CrewPage = () => {
                       lg:max-w-[1110px] lg:gap-0 lg:mx-auto 
                       xl:px-0"
         >
-          <h5
-            className="flex gap-5 
-                        sm:self-start sm:gap-7"
-          >
-            <span className="font-bold text-white text-opacity-25 sm:pl-10 lg:pl-0">
-              02
-            </span>
-            Meet your crew
-          </h5>
+          <SectionTitle number="02" title="Meet your crew" />
 
           <div className="flex flex-col items-center w-full lg:flex-row lg:items-end lg:justify-between lg:max-h-[654px]">
             {text.images ? (

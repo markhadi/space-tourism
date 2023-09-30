@@ -1,13 +1,16 @@
 "use client";
 
 import Nav from "@/components/Nav";
+import DetailCard from "@/components/DetailCard";
+import SectionTitle from "@/components/SectionTitle";
+import { Skeleton } from "@/components/ui/skeleton";
+
 import data from "@/static/data.json";
+
 import Image from "next/image";
 
 import useAnimation from "@/hooks/useAnimation";
 import useLocalStorage from "@/hooks/useLocalStorage";
-
-import { Skeleton } from "@/components/ui/skeleton";
 
 const destinations = data.destinations;
 
@@ -21,9 +24,8 @@ const DestinationPage = () => {
   const handleUpdateLocalStorage = (index) => {
     const newData = destinations[index];
 
-    animateElement("#newItem");
-
     updateLocalStorage(newData);
+    animateElement("#newItem");
   };
 
   return (
@@ -46,15 +48,7 @@ const DestinationPage = () => {
                       lg:max-w-[1110px] lg:gap-16 lg:mx-auto 
                       xl:px-0"
         >
-          <h5
-            className="flex gap-5 
-                        sm:self-start sm:gap-7"
-          >
-            <span className="font-bold text-white text-opacity-25 sm:pl-10 lg:pl-0">
-              01
-            </span>
-            Pick your destination
-          </h5>
+          <SectionTitle number="01" title="Pick your destination" />
 
           <div
             className="flex flex-col items-center gap-7 
@@ -117,26 +111,8 @@ const DestinationPage = () => {
               <hr className="w-full border border-[#383B4B] my-8 sm:my-0 sm:mt-12 sm:mb-7 lg:mt-[52px]" />
 
               <div className="flex flex-col items-center gap-8 sm:flex-row sm:w-[350px] sm:justify-between lg:gap-20 lg:w-max lg:items-start">
-                <div className=" flex flex-col gap-3 text-center lg:text-left">
-                  <span className="subheading-2">AVG. DISTANCE</span>
-                  {text.distance ? (
-                    <span id="newItem" className="subheading-1">
-                      {text.distance}
-                    </span>
-                  ) : (
-                    <Skeleton className="w-full h-8" />
-                  )}
-                </div>
-                <div className="flex flex-col gap-3 text-center lg:text-left">
-                  <span className="subheading-2">Est. travel time</span>
-                  {text.travel ? (
-                    <span id="newItem" className="subheading-1">
-                      {text.travel}
-                    </span>
-                  ) : (
-                    <Skeleton className="w-full h-8" />
-                  )}
-                </div>
+                <DetailCard title="Avg. Distance" content={text.distance} />
+                <DetailCard title="Est. travel time" content={text.travel} />
               </div>
             </div>
           </div>
