@@ -74,18 +74,18 @@ const DestinationPage = () => {
                           lg:items-start lg:max-w-[444px] lg:w-full"
             >
               <div
-                className="subheading-2 flex gap-7 mb-9 
-                            sm:gap-9 sm:text-[16px] sm:leading-[20px] sm:tracking-[2.7px] sm:mb-12 
-                            lg:mb-[52px]"
+                className="flex gap-7 mb-9 
+                            sm:gap-9 sm:mb-12 
+                            lg:mb-[50px]"
               >
                 {destinations.map((destination, index) => (
                   <button
                     key={destination.name}
                     onClick={() => handleUpdateLocalStorage(index)}
-                    className={`uppercase relative btn ${
+                    className={`uppercase relative btn nav_text ${
                       destination.name === text.name
                         ? "text-white btn_active"
-                        : ""
+                        : "!text-blue-light"
                     }`}
                   >
                     {destination.name}
@@ -108,7 +108,7 @@ const DestinationPage = () => {
                 <Skeleton className="w-full h-20 mt-2 lg:h-32" />
               )}
 
-              <hr className="w-full border border-[#383B4B] my-8 sm:my-0 sm:mt-12 sm:mb-7 lg:mt-[52px]" />
+              <hr className="w-full border-t border-[#383B4B] my-8 sm:my-0 sm:mt-12 sm:mb-7 lg:mt-[52px]" />
 
               <div className="flex flex-col items-center gap-8 sm:flex-row sm:w-[350px] sm:justify-between lg:gap-20 lg:w-max lg:items-start">
                 <DetailCard title="Avg. Distance" content={text.distance} />

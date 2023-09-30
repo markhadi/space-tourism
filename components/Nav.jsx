@@ -51,7 +51,7 @@ const Nav = () => {
 
       {/* menu desktop */}
       <div className="hidden menu_desktop">
-        <div className="flex gap-7 menu_item lg:gap-[52px]">
+        <div className="flex gap-7 nav_text lg:gap-[52px]">
           {menuArray.map((item) => {
             const itemPath =
               item.name.toLowerCase() === "home"
@@ -79,7 +79,7 @@ const Nav = () => {
 
       {/* menu mobile */}
       <div className={`menu_mobile ${isMenuOpen ? "" : "hide_menu"} sm:hidden`}>
-        <div className="flex flex-col gap-8 menu_item">
+        <div className="flex flex-col gap-8 nav_text">
           {isMenuOpen
             ? menuArray.map((item) => {
                 const itemPath =

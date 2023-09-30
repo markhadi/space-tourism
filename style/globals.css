@@ -62,8 +62,8 @@ p {
 }
 
 .menu_hover {
-  @apply after:absolute after:border-[3px] after:opacity-0 after:w-0 after:left-0 after:bottom-[-38px] after:transition-all after:duration-300
-          after:hover:border-[3px] after:hover:opacity-50 after:hover:w-full;
+  @apply after:absolute after:border-t-[3px] after:opacity-0 after:w-0 after:left-0 after:bottom-[-38px] after:transition-all after:duration-300
+          after:hover:border-t-[3px] after:hover:opacity-50 after:hover:w-full;
 }
 
 .menu_active {
@@ -83,8 +83,8 @@ p {
 }
 
 .menu_hover_mobile {
-  @apply after:absolute after:border-[3px] after:opacity-0 after:h-0 after:right-0 after:transition-all after:duration-300
-          after:hover:border-[3px] after:hover:opacity-50 after:hover:h-full;
+  @apply after:absolute after:border-t-[3px] after:opacity-0 after:h-0 after:right-0 after:transition-all after:duration-300
+          after:hover:border-t-[3px] after:hover:opacity-50 after:hover:h-full;
 }
 
 .menu_active_mobile {
@@ -95,7 +95,7 @@ p {
   @apply w-0 pl-0;
 }
 
-.menu_item {
+.nav_text {
   @apply text-white font-barlow-condensed text-[16px] leading-[20px] tracking-[2.7px] uppercase;
 }
 
@@ -104,12 +104,12 @@ p {
 }
 
 .btn {
-  @apply after:absolute after:w-0 after:border-[3px] after:border-white after:left-0 after:-bottom-3 after:opacity-0 after:transition-all after:duration-300
-          after:hover:border-[3px] after:hover:w-full after:hover:opacity-50;
+  @apply after:absolute after:w-0 after:border-t-[3px] after:border-white after:left-0 after:-bottom-[14px] after:opacity-0 after:transition-all after:duration-300
+          after:hover:border-t-[3px] after:hover:w-full after:hover:opacity-50;
 }
 
 .btn_active {
-  @apply after:absolute after:w-full after:border-[3px] after:border-white after:left-0 after:-bottom-3 after:opacity-100 after:transition-all after:duration-300;
+  @apply after:absolute after:w-full after:border-t-[3px] after:border-white after:left-0 after:-bottom-[14px] after:opacity-100 after:transition-all after:duration-300;
 }
 
 .btn_sm_circle {

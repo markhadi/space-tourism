@@ -49,7 +49,7 @@ const CrewPage = () => {
                 width={160}
                 height={222}
                 alt={text.name}
-                className="sm:w-[410px] sm:h-[572px] lg:w-[514px] lg:h-[700px] lg:translate-x-[28px]"
+                className="sm:w-[410px] sm:h-[572px] lg:w-[514px] lg:h-[700px] lg:!translate-x-[28px]"
                 id="newItem"
               />
             ) : (
