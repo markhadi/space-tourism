@@ -33,7 +33,7 @@ const TechnologyPage = () => {
     >
       <Nav />
 
-      <main className="mt-6 pb-14 sm:mt-10 sm:pb-[100px] lg:mt-[76px]">
+      <main className="mt-6 pb-14 sm:mt-10 sm:pb-[100px] lg:mt-[76px] lg:pb-[140px]">
         <div
           ref={scope}
           className="flex flex-col items-center gap-8 
