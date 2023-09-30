@@ -13,7 +13,7 @@ Users should be able to:
 # Links
 
 - Solution URL: https://github.com/markhadi/space-tourism
-- Live Site URL: https://markhadi.github.io/space-tourism/
+- Live Site URL: https://space-tourism-sigma-navy.vercel.app/
 
 # Author
 
