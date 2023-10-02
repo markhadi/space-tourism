@@ -28,7 +28,7 @@ export default function Home() {
         >
           <div
             id="item"
-            className="flex flex-col gap-4 text-center max-w-[445px] 
+            className="flex flex-col gap-4 text-center max-w-[445px] opacity-0
                         sm:gap-6 
                         lg:text-left"
           >
@@ -42,7 +42,11 @@ export default function Home() {
             </p>
           </div>
 
-          <Link id="item" href={"/destination"} className="btn_circle">
+          <Link
+            id="item"
+            href={"/destination"}
+            className="btn_circle opacity-0"
+          >
             explore
           </Link>
         </div>
