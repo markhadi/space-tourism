@@ -16,13 +16,13 @@ const TechnologyPage = () => {
     "technology",
     technology[0]
   );
-  const [scope, animateElement] = useAnimation();
+  const [scope, triggerAnimation] = useAnimation("#newItem");
 
   const handleUpdateLocalStorage = (index) => {
     const newData = technology[index];
 
     updateLocalStorage(newData);
-    animateElement("#newItem");
+    triggerAnimation();
   };
 
   return (

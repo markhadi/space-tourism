@@ -15,13 +15,13 @@ const crew = data.crew;
 
 const CrewPage = () => {
   const [text, updateLocalStorage] = useLocalStorage("crew", crew[0]);
-  const [scope, animateElement] = useAnimation();
+  const [scope, triggerAnimation] = useAnimation("#newItem");
 
   const handleUpdateLocalStorage = (index) => {
     const newData = crew[index];
 
     updateLocalStorage(newData);
-    animateElement("#newItem");
+    triggerAnimation();
   };
 
   return (

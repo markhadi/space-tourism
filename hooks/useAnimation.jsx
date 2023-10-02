@@ -1,24 +1,28 @@
-import { useAnimate } from "framer-motion";
+import { useAnimate, useInView } from "framer-motion";
+import { useEffect, useState } from "react";
 
-const useAnimation = () => {
+const useAnimation = (elementId) => {
   const [scope, animate] = useAnimate();
+  const isInView = useInView(scope);
+  const [trigger, setTrigger] = useState(false);
 
-  const animateElement = (elementId) => {
-    animate(
-      elementId,
-      {
-        opacity: [0, 1],
-        scale: [0.3, 1],
-        filter: ["blur(20px)", "blur(0px)"],
-      },
-      {
-        ease: [0.13, 0.55, 0.55, 1],
-        duration: 0.5,
-      }
-    );
-  };
+  useEffect(() => {
+    if (isInView || trigger) {
+      animate(
+        elementId,
+        {
+          opacity: [0, 1],
+        },
+        {
+          ease: "easeInOut",
+          duration: 3,
+        }
+      );
+      setTrigger(false);
+    }
+  }, [isInView, trigger, animate]);
 
-  return [scope, animateElement];
+  return [scope, () => setTrigger(true)];
 };
 
 export default useAnimation;

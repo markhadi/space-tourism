@@ -3,6 +3,7 @@
 import Nav from "@/components/Nav";
 import DetailCard from "@/components/DetailCard";
 import SectionTitle from "@/components/SectionTitle";
+import RotateAnimation from "@/components/RotateAnimation";
 import { Skeleton } from "@/components/ui/skeleton";
 
 import data from "@/static/data.json";
@@ -19,13 +20,13 @@ const DestinationPage = () => {
     "destination",
     destinations[0]
   );
-  const [scope, animateElement] = useAnimation();
+  const [scope, triggerAnimation] = useAnimation("#newItem");
 
   const handleUpdateLocalStorage = (index) => {
     const newData = destinations[index];
 
     updateLocalStorage(newData);
-    animateElement("#newItem");
+    triggerAnimation();
   };
 
   return (
@@ -56,14 +57,16 @@ const DestinationPage = () => {
                         lg:pl-[54px] lg:flex-row lg:items-end lg:justify-between lg:w-full"
           >
             {text.images ? (
-              <Image
-                src={text.images}
-                width={170}
-                height={170}
-                alt={text.name}
-                className="sm:w-[300px] sm:h-[300px] lg:w-[445px] lg:h-[445px]"
-                id="newItem"
-              />
+              <RotateAnimation>
+                <Image
+                  src={text.images}
+                  width={170}
+                  height={170}
+                  alt={text.name}
+                  className="sm:w-[300px] sm:h-[300px] lg:w-[445px] lg:h-[445px]"
+                  id="newItem"
+                />
+              </RotateAnimation>
             ) : (
               <Skeleton className="w-[170px] h-[170px] sm:w-[300px] sm:h-[300px] lg:w-[445px] lg:h-[445px]" />
             )}
